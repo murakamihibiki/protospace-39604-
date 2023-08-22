@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+    <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <% if user_signed_in? %>
+    <div class="nav__right">
+    <%= link_to "ログアウト", root_path, class: :nav__logout %>
+    <%= link_to "New Proto", root_path, class: :nav__btn %>
+    </div>
+    <div class="nav__right">
+    <%= link_to "ログイン", user_session_path, class: :nav__btn %>
+    <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+    </div>
+    <% end %>
+
   </head>
 
   <body>
