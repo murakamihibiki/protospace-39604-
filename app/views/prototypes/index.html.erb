@@ -4,5 +4,9 @@
 こんにちは、
 <%= link_to "#{current_user.name}さん", root_path, class: :greeting__link%>
 </div>
+<%= render "form" %>
 <% end %>
 <%# // ログインしているときは上記を表示する %>
+
+<%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+<%= render partial: 'prototype', collection: @prototypes %>
